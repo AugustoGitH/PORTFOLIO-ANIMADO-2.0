@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de projetos</title>
+    <%- include("./templates/css_configs.ejs") %> 
+    <link rel="stylesheet" href="/public/css/telaconsole.css">
+</head>
+<body class="block-overflow">
+    <div class="popup_loop">
+        <img src="https://thumbs.gfycat.com/AmusedThirdHawaiianmonkseal-max-1mb.gif">
+    </div>
+    <div class="PAGE">
+        <section class="form_create-projects--container">
+            <h1>Criar um novo projeto</h1>
+            <form>
+                <div class="input_create-project">
+                    <input type="text" id="name-project" required>
+                    <label>Nome do projeto</label>
+                </div>
+                <div class="options-classe--input checkbox" id="check_classes">
+                    <label>Tipo de projeto</label>
+                    <ul class="options_blocks">
+                        <li>Todos</li>
+                        <li>Projeto Full-Stack</li>
+                        <li>Site Clone</li>
+                        <li>Lading Page</li>
+                        <li>E-Commerce</li>
+                    </ul>
+                </div>
+                <div class="options-colors--input checkbox" id="check_colors">
+                    <label>Cor da caixa (borda do projeto)</label>
+                    <ul class="options_blocks">
+                        <li>Red</li>
+                        <li>Blue</li>
+                        <li>White</li>
+                        <li>Gray</li>
+                        <li>Dark Blue</li>
+                        <li>Yellow</li>
+                        <li>Light Blue</li>
+                    </ul>
+                </div>
+                <div class="options-typeProject--input">
+                    <ul class="options_blocks">
+                        <li>
+                            <button><i class='bx bxs-video'></i></button>
+                            <span class="input-ocult-option ocult-input">
+                                <input type="text" id="input_link-video">
+                                <i class='bx bx-link' ></i>
+                            </span>
+                        </li>
+                        <li>
+                            <button><i class='bx bx-desktop' ></i></button>
+                            <span class="input-ocult-option ocult-input">
+                                <input type="text" id="input_link-site">
+                                <i class='bx bx-link' ></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="options-techs--input checkbox" id="check_techs">
+                    <label>Tecnologias utilizadas</label>
+                    <ul class="options_blocks">
+                        <li><i class='bx bxl-html5'></i></li>
+                        <li><i class='bx bxl-css3' ></i></li>
+                        <li><i class='bx bxl-javascript' ></i></li>
+                        <li><i class='bx bxl-firebase' ></i></li>
+                        <li><i class='bx bxl-nodejs' ></i></li>
+                        <li><i class='bx bxl-bootstrap' ></i></li>
+                        <li><i class='bx bxl-mongodb' ></i></li>
+                        <li><i class='bx bxl-sass' ></i></li>
+                    </ul>
+                </div>
+                <div class="input_image-project">
+                    <label class="input_image-label">
+                        <input class="input-image" type="file" accept="image/*" required>
+                        Escolha uma imagem<i class='bx bxs-image-add' ></i>
+                    </label>
+                    <div class="container_sample-image"></div>
+                </div>
+                <div class="input_create-project">
+                    <input type="number" id="id-github" required>
+                    <label>Id do Github</label>
+                </div>
+                <input type="submit" value="criar projeto" id="submit-form">
+            </form>
+        </section>
+    
+        <section class="project_management-container">
+            <div class="project_management-contant">
+                <h1>Gerenciar seus projetos</h1>
+                <ul class="projects_management-list">
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="/public/js/telaconsole.js"></script>
+</body>
+</html>

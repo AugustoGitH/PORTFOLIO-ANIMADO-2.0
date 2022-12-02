@@ -1,0 +1,331 @@
+.block-overflow {
+  overflow-y: hidden;
+}
+
+body {
+  background: #070a15;
+}
+body .PAGE {
+  padding: 10%;
+}
+body .popup_loop {
+  background: rgba(7, 10, 21, 0.9921568627);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .popup_loop img {
+  width: 100px;
+}
+body section {
+  margin-bottom: 5rem;
+}
+body section h1 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+body .form_create-projects--container {
+  width: 100%;
+}
+body .form_create-projects--container form {
+  max-width: 700px;
+  min-width: 400px;
+}
+body .form_create-projects--container form div {
+  margin-top: 3rem;
+}
+body .form_create-projects--container form .input_create-project {
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+body .form_create-projects--container form .input_create-project input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 1.3rem;
+  padding: 0 1rem;
+  color: #241414;
+  border: none;
+}
+body .form_create-projects--container form .input_create-project input:focus {
+  outline: none;
+}
+body .form_create-projects--container form .input_create-project label {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #241414;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+  pointer-events: none;
+  transition: 0.3s;
+}
+body .form_create-projects--container form .input_create-project input:focus ~ label, body .form_create-projects--container form .input_create-project input:valid ~ label {
+  top: -1rem;
+  left: 0;
+  font-size: 1rem;
+  color: #D4D925;
+}
+body .form_create-projects--container form .options-classe--input label {
+  font-size: 1.3rem;
+  color: #D4D925;
+}
+body .form_create-projects--container form .options-classe--input ul {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .form_create-projects--container form .options-classe--input ul li {
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0.3rem;
+  word-wrap: break-word;
+  text-align: center;
+  border: 1.4px solid #D4D925;
+  color: #D4D925;
+}
+body .form_create-projects--container form .options-classe--input ul li:hover {
+  background: #D4D925;
+  color: #241414;
+}
+body .form_create-projects--container form .options-classe--input ul .mark-option {
+  background: #D4D925;
+  color: #241414;
+}
+body .form_create-projects--container form .options-colors--input label {
+  font-size: 1.3rem;
+  color: rgb(209, 209, 255);
+}
+body .form_create-projects--container form .options-colors--input ul {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .form_create-projects--container form .options-colors--input ul li {
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0.3rem;
+  word-wrap: break-word;
+  text-align: center;
+  border: 1.4px solid rgb(209, 209, 255);
+  color: rgb(209, 209, 255);
+}
+body .form_create-projects--container form .options-colors--input ul li:hover {
+  background: rgb(209, 209, 255);
+  color: #241414;
+}
+body .form_create-projects--container form .options-colors--input ul .mark-color-option {
+  background: rgb(209, 209, 255);
+  color: #241414;
+}
+body .form_create-projects--container form .options-typeProject--input ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body .form_create-projects--container form .options-typeProject--input ul li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+body .form_create-projects--container form .options-typeProject--input ul li .mark-type-option {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+body .form_create-projects--container form .options-typeProject--input ul li button {
+  all: unset;
+  font-size: 1.7rem;
+  background: rgb(209, 209, 255);
+  width: 40px;
+  height: 40px;
+  margin: 0.4rem 0;
+  margin-right: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 4px 4px #7c71b5;
+}
+body .form_create-projects--container form .options-typeProject--input ul li button:hover {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+body .form_create-projects--container form .options-typeProject--input ul li button i {
+  font-size: 1.4rem;
+  color: #241414;
+  pointer-events: none;
+}
+body .form_create-projects--container form .options-typeProject--input ul li .input-ocult-option {
+  transform: translate(4px, 4px);
+  width: calc(100% - (45px + 1rem));
+  height: 35px;
+  position: relative;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+body .form_create-projects--container form .options-typeProject--input ul li .input-ocult-option input {
+  border: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #241414;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  border-radius: 20px;
+}
+body .form_create-projects--container form .options-typeProject--input ul li .input-ocult-option input:focus {
+  outline: none;
+}
+body .form_create-projects--container form .options-typeProject--input ul li .input-ocult-option i {
+  position: absolute;
+  right: 1rem;
+  color: #241414;
+  font-size: 1.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body .form_create-projects--container form .options-typeProject--input ul li .ocult-input {
+  width: 0%;
+  opacity: 0;
+  pointer-events: none;
+}
+body .form_create-projects--container form .options-techs--input label {
+  font-size: 1.3rem;
+  color: #fff;
+}
+body .form_create-projects--container form .options-techs--input ul {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+body .form_create-projects--container form .options-techs--input ul li {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+body .form_create-projects--container form .options-techs--input ul li:hover i {
+  color: #D4D925;
+  transform: scale(1.2);
+}
+body .form_create-projects--container form .options-techs--input ul li i {
+  font-size: 2.3rem;
+  pointer-events: none;
+}
+body .form_create-projects--container form .options-techs--input ul .mark-tech-option i {
+  color: #D4D925;
+  transform: scale(1.2);
+}
+body .form_create-projects--container form .input_image-project label {
+  background: #df5050;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+body .form_create-projects--container form .input_image-project label i {
+  font-size: 1.4rem;
+  margin-left: 0.5rem;
+}
+body .form_create-projects--container form .input_image-project label input {
+  display: none;
+}
+body .form_create-projects--container form .input_image-project .sample_image {
+  width: 500px;
+  height: 250px;
+  overflow: hidden;
+}
+body .form_create-projects--container form .input_image-project .sample_image img {
+  width: auto;
+  height: 100%;
+}
+body .form_create-projects--container form input[type=submit] {
+  all: unset;
+  font-size: 1.3rem;
+  padding: 0.4rem 1rem;
+  text-transform: uppercase;
+  background: #D4D925;
+  color: #241414;
+  margin-top: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1.5px solid #D4D925;
+  transition: 0.3s;
+}
+body .form_create-projects--container form input[type=submit]:hover {
+  background: transparent;
+  color: #D4D925;
+}
+body .project_management-container .project_management-contant .projects_management-list .project {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 160px;
+  position: relative;
+}
+body .project_management-container .project_management-contant .projects_management-list .project .icon_trash-project {
+  position: absolute;
+  top: 40px;
+  right: 2rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+body .project_management-container .project_management-contant .projects_management-list .project .icon_trash-project:hover {
+  color: red;
+}
+body .project_management-container .project_management-contant .projects_management-list .project .checkbox-favorite {
+  position: absolute;
+  top: 0px;
+  right: 2rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+body .project_management-container .project_management-contant .projects_management-list .project .checkbox-favorite:hover {
+  color: #D4D925;
+}
+body .project_management-container .project_management-contant .projects_management-list .project .project-favorite-mark {
+  color: #D4D925;
+}
+body .project_management-container .project_management-contant .projects_management-list .project .img_project-container {
+  width: 300px;
+  height: 100%;
+  overflow: hidden;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .project_management-container .project_management-contant .projects_management-list .project .img_project-container img {
+  width: auto;
+  height: 100%;
+}
+body .project_management-container .project_management-contant .projects_management-list .project .informacion_project-container a {
+  color: rgb(209, 209, 255);
+}
+body .project_management-container .project_management-contant .projects_management-list .project .informacion_project-container ul {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+body .project_management-container .project_management-contant .projects_management-list .project .informacion_project-container ul i {
+  font-size: 1.4rem;
+}
+
+/*# sourceMappingURL=telaconsole.css.map */

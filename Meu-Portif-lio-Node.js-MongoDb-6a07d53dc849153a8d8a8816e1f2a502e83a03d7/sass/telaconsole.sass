@@ -1,0 +1,260 @@
+@use "variables"
+@use "mixins"
+
+.block-overflow
+    overflow-y: hidden
+body
+    background: variables.$color-body
+    .PAGE
+        padding: 10%
+    .popup_loop
+        background: variables.$color-popUp
+        position: fixed
+        top: 0
+        width: 100vw
+        height: 100vh
+        z-index: variables.$z-index-03
+        @include mixins.flex-box(center, center)
+        img
+            width: 100px
+    section
+        margin-bottom: 5rem
+        h1
+            font-size: variables.$title-h2
+            text-transform: uppercase
+    .form_create-projects--container
+        width: 100%
+        form
+            max-width: 700px
+            min-width: 400px
+            div
+                margin-top: 3rem
+            .input_create-project
+                width: 100%
+                height: 40px
+                position: relative
+                input
+                    width: 100%
+                    height: 100%
+                    position: absolute
+                    font-size: 1.3rem
+                    padding: 0 1rem
+                    color: variables.$color-black
+                    border: none
+                    &:focus
+                        outline: none
+                label
+                    position: absolute
+                    font-size: 1.2rem
+                    color: variables.$color-black
+                    top: 50%
+                    transform: translateY(-50%)
+                    left: 1rem
+                    pointer-events: none
+                    transition: variables.$transition-default
+                input:focus ~ label, input:valid ~ label
+                    top: -1rem
+                    left: 0
+                    font-size: 1rem
+                    color: variables.$color-yellow
+            .options-classe--input
+                label
+                    font-size: 1.3rem
+                    color: variables.$color-yellow
+                ul
+                    margin-top: 1rem
+                    @include mixins.flex-box(flex-start, center)
+                    flex-wrap: wrap
+                    li
+                        padding: .4rem 1rem
+                        cursor: pointer
+                        transition: variables.$transition-default
+                        margin: .3rem
+                        word-wrap: break-word
+                        text-align: center
+                        border: 1.4px solid variables.$color-yellow
+                        color: variables.$color-yellow
+                        &:hover
+                            background: variables.$color-yellow
+                            color: variables.$color-black
+                    .mark-option
+                        background: variables.$color-yellow
+                        color: variables.$color-black
+            .options-colors--input
+                label
+                    font-size: 1.3rem
+                    color: variables.$color-clear-blue
+                ul
+                    margin-top: 1rem
+                    @include mixins.flex-box(flex-start, center)
+                    flex-wrap: wrap
+                    li
+                        padding: .4rem 1rem
+                        cursor: pointer
+                        transition: variables.$transition-default
+                        margin: .3rem
+                        word-wrap: break-word
+                        text-align: center
+                        border: 1.4px solid variables.$color-clear-blue
+                        color: variables.$color-clear-blue
+                        &:hover
+                            background: variables.$color-clear-blue
+                            color: variables.$color-black
+                    .mark-color-option
+                        background: variables.$color-clear-blue
+                        color: variables.$color-black
+            .options-typeProject--input
+                ul
+                    @include mixins.flex-box(flex-start, flex-start)
+                    flex-direction: column
+                    li
+                        @include mixins.flex-box(flex-start, center)
+                        width: 100%
+                        .mark-type-option
+                            box-shadow: none
+                            transform: variables.$translate-hover-02
+                        button
+                            all: unset
+                            font-size: variables.$font-icon-02
+                            background:  variables.$color-clear-blue
+                            width: 40px
+                            height: 40px
+                            margin: 0.4rem 0
+                            margin-right: 1rem
+                            border-radius: 50%
+                            @include mixins.flex-box(center, center)
+                            cursor: pointer
+                            transition: variables.$transition-default
+                            box-shadow: variables.$box-shadow-02 variables.$color-boxShadow-clear-blue
+                            &:hover
+                                box-shadow: none
+                                transform: variables.$translate-hover-02
+                            i
+                                font-size: variables.$font-icon-01
+                                color: variables.$color-black
+                                pointer-events: none
+                        .input-ocult-option
+                            transform: variables.$translate-hover-02
+                            width: calc(100% - (45px + 1rem))
+                            height: 35px
+                            position: relative
+                            border-radius: 20px
+                            transition: variables.$transition-default
+                            
+                            input
+                                border: none
+                                position: absolute
+                                width: 100%
+                                height: 100%
+                                color: variables.$color-black
+                                padding: 0 1rem
+                                font-size: 1.2rem
+                                border-radius: 20px
+                                &:focus
+                                    outline: none
+                            i
+                                position: absolute
+                                right: 1rem
+                                color: variables.$color-black
+                                font-size: variables.$font-icon-02
+                                top: 50%
+                                transform: translateY(-50%)
+                        .ocult-input
+                            width: 0%
+                            opacity: 0
+                            pointer-events: none
+            .options-techs--input
+                label
+                    font-size: 1.3rem
+                    color:#fff
+                ul
+                    margin-top: 1rem
+                    @include mixins.flex-box(flex-start, center)
+                    li
+                        margin-right: 1rem
+                        cursor: pointer
+                        &:hover  
+                            i
+                                color: variables.$color-yellow
+                                transform: scale(1.2)
+                        i
+                            font-size: 2.3rem
+                            pointer-events: none
+                    .mark-tech-option i
+                        color: variables.$color-yellow
+                        transform: scale(1.2)
+            .input_image-project
+                label
+                    background: #df5050
+                    padding: .5rem 1rem
+                    @include mixins.flex-box(center, center)
+                    cursor: pointer
+                    i
+                        font-size: 1.4rem
+                        margin-left: .5rem
+                    input
+                        display: none
+                .sample_image
+                    width: 500px
+                    height: 250px
+                    overflow: hidden
+                    img
+                        width: auto
+                        height: 100%
+            input[type="submit"]
+                all: unset
+                font-size: 1.3rem
+                padding: .4rem 1rem
+                text-transform: uppercase
+                background: variables.$color-yellow
+                color: variables.$color-black
+                margin-top: 3rem
+                font-weight: bold
+                cursor: pointer
+                border: 1.5px solid variables.$color-yellow
+                transition: variables.$transition-default
+                &:hover
+                    background: transparent
+                    color: variables.$color-yellow
+    .project_management-container
+        .project_management-contant
+            .projects_management-list
+                .project
+                    margin: 2rem 0
+                    @include mixins.flex-box(flex-start, center)
+                    height: 160px
+                    position: relative
+                    .icon_trash-project
+                        position: absolute
+                        top: 40px
+                        right: 2rem
+                        font-size: variables.$font-icon-01
+                        cursor: pointer
+                        &:hover
+                            color: red
+                    .checkbox-favorite
+                        position: absolute
+                        top: 0px
+                        right: 2rem
+                        font-size: variables.$font-icon-01
+                        cursor: pointer
+                        &:hover
+                            color: variables.$color-yellow
+                    .project-favorite-mark
+                        color: variables.$color-yellow
+                    .img_project-container
+                        width: 300px
+                        height: 100%
+                        overflow: hidden
+                        margin-right: 2rem
+                        @include mixins.flex-box(center, center)
+                        img
+                            width: auto
+                            height: 100%
+                    .informacion_project-container
+                        a
+                            color: variables.$color-clear-blue
+                        ul
+                            @include mixins.flex-box(start, center)
+                            i
+                                font-size: variables.$font-icon-01

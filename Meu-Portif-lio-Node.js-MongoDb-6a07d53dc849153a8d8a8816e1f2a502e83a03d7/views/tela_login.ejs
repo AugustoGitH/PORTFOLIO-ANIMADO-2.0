@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se identifique</title>
+    <%- include("./templates/css_configs.ejs") %> 
+    <link rel="stylesheet" href="/public/css/telalogin.css">
+</head>
+<body>
+    <div class="form_authentication-container">
+        <h1>Se identifique<i class='bx bxs-hand'></i></h1>
+        <form>
+            <div class="input_auth">
+                <input type="text" id="username" required>
+                <label>Username</label>
+            </div>
+            <div class="input_auth">
+                <input type="password" id="password" required>
+                <label>Password</label>
+                <i class='bx bxs-low-vision icon-visible' onclick="visiblePassword(this)" ></i>
+            </div>
+            <input class="submit_form" type="submit" value="Enviar">
+        </form>
+    </div>
+    <script src="/public/js/telalogin.js"></script>
+</body>
+
+</html>

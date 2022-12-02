@@ -1,0 +1,79 @@
+@use "variables"
+@use "mixins"
+
+body
+    background: variables.$color-body
+    height: 100vh
+    @include mixins.flex-box(center, center)
+    .form_authentication-container
+        padding: 1rem
+        width: 600px
+        h1
+            margin-bottom: 4rem
+            text-transform: uppercase
+            color: variables.$color-yellow
+            @include mixins.flex-box(center, center)
+            i
+                margin-left: 1rem
+                font-size: variables.$font-icon-03
+        form
+            .input_auth
+                margin-bottom: 2.4rem
+                width: 100%
+                height: 40px
+                position: relative
+                border-radius: 20px
+                box-shadow: variables.$box-shadow-02 variables.$color-boxShadow-clear-blue
+                input
+                    width: 100%
+                    height: 100%
+                    background: variables.$color-clear-blue
+                    position: absolute
+                    border: none
+                    padding: .3rem 1.2rem
+                    font-size: 1.3rem
+                    color: variables.$color-black
+                    border-radius: 20px
+                    &:focus
+                        outline: none
+
+                label
+                    position: absolute
+                    font-size: 1.3rem
+                    color: variables.$color-black
+                    top: 50%
+                    transform: translateY(-50%)
+                    left: 1.2rem
+                    pointer-events: none
+                    transition: variables.$transition-default
+                input:focus ~ label, input:valid ~ label
+                    top: -15px
+                    font-size: 1.2rem
+                    color: #fff
+                    font-weight: bold
+                .icon-visible
+                    position: absolute
+                    right: 1.3rem
+                    color: variables.$color-black
+                    font-size: variables.$font-icon-02
+                    top: 50%
+                    transform: translateY(-50%)
+                    opacity: 0
+                    transition: variables.$transition-default
+                    cursor: pointer
+                input:focus ~ .icon-visible
+                    opacity: 1
+            input[type="submit"]
+                all: unset
+                font-size: 1.3rem
+                text-transform: uppercase
+                color: variables.$color-black
+                background: variables.$color-yellow
+                cursor: pointer
+                padding: .4rem 1.3rem
+                border-radius: 20px
+                transition: variables.$transition-default
+                box-shadow: variables.$color-boxShadow-yellow variables.$box-shadow-02
+                &:hover
+                    box-shadow: none
+                    transform: variables.$translate-hover-02

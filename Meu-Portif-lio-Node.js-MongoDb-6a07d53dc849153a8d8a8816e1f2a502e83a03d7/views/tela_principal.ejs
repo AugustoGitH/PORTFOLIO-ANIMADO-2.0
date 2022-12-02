@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="/public/css/telaprincipal.css">
+    <%- include("./templates/css_configs.ejs") %> 
+</head>
+<body class="block-overflow">
+    <div class="popup_loop">
+        <img src="https://thumbs.gfycat.com/AmusedThirdHawaiianmonkseal-max-1mb.gif">
+    </div>
+    <div class="body-page">
+        <div class="line_nav-page"></div>
+        <img class="rocket_nav-scroll" src="public/assets/foguete.png">
+
+        <section class="presentation_profile-container">
+            <div class="presentation_profile-content">
+                <img src="public/assets/FotoPerfil.png">
+                <article>
+                    <h2>Meu perfil</h2>
+                    <h1 id="type-presentation">Olá meu nome é Augusto</h1>
+                    <p>SOU DESENVOLVEDOR FRONT-END || BACK-END</p>
+                    <a href="#contato"><button>CONTATO</button></a>
+                    <ul>
+                        <a target="_blank" href="https://github.com/AugustoGitH"><i class='bx bxl-github' ></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/augusto-westphal-67b7b3230/"><i class='bx bxl-linkedin' ></i></a>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="technologies-container">
+            <div class="technologies-content">
+                <h1 class="page_title-h1">TECNOLOGIAS</h1>
+                <ul class="buttons_infoTechs-list">
+                    <li onclick="openPopUpTechs('HTML')">
+                        <p>HTML5</p>
+                    </li>
+                    <li onclick="openPopUpTechs('CSS')">
+                        <p>CSS3</p>
+                    </li>
+                    <li onclick="openPopUpTechs('JS')">
+                        <p>JavaScript</p>
+                    </li>
+                    <li onclick="openPopUpTechs('BT')">
+                        <p>Bootstrap</p>
+                    </li>
+                    <li onclick="openPopUpTechs('JQ')">
+                        <p>Jquery</p>
+                    </li>
+                    <li onclick="openPopUpTechs('NODE')">
+                        <p>Node Js</p>
+                    </li>
+                    <li onclick="openPopUpTechs('FIREBASE')">
+                        <p>Google</p>
+                        <p>Firebase Firestore</p>
+                    </li>
+                    <li onclick="openPopUpTechs('MONGODB')">
+                        <p>MongoDB</p>
+                    </li>
+                </ul>
+                <div class="scenery_blocks-container">
+                    <div class="block_tech color_block-01">
+                        <i class="bx bxl-html5"></i>
+                        <img class="mario_person-img" src="public/assets/elementoInterativo/png-transparent-super-mario-pixel-illustration-super-mario-bros-luigi-pixel-art-pixel-heroes-text-super-mario-bros.png">
+                    </div>
+                    <div class="block_tech color_block-02">
+                        <i class="bx bxl-css3" ></i>
+                    </div>
+                    <div class="block_tech color_block-03">
+                        <i class="bx bxl-javascript" ></i>
+                        <img class="coin_person-img" src="public/assets/elementoInterativo/Moeda.png">
+                    </div>
+                    <div class="block_tech color_block-04">
+                        <i class="bx bxl-bootstrap" ></i>
+                    </div>
+                    <div class="block_tech color_block-05">
+                        <i class="bx bxl-jquery"></i>
+                    </div>
+                </div>
+
+                <ul class="estatics_techs-used">
+                    <h1>Linguagens mais usadas em meus projetos</h1>
+                    <li id="HTML">
+                        <span class="techs_name">HTML<i class='bx bxs-file-html colorIcon1'></i></span> 
+                        <div class="bar_percent_module">
+                            <div class="bar_percent-tech boll_init-tech colorBar1"><span class="percent_legend">0%</span></div>
+                        </div>
+                    </li>
+                    <li id="CSS">
+                        <span class="techs_name">CSS<i class='bx bxs-file-css colorIcon2' ></i></span> 
+                        <div class="bar_percent_module">
+                            <div class="bar_percent-tech boll_init-tech colorBar2"><span class="percent_legend">0%</span></div>
+                        </div>
+                    </li>
+                    <li id="JavaScript">
+                        <span class="techs_name">JavaScript<i class='bx bxs-file-js colorIcon3' ></i></span> 
+                        <div class="bar_percent_module">
+                            <div class="bar_percent-tech boll_init-tech colorBar3"><span class="percent_legend">0%</span></div>
+                        </div>
+                    </li>
+                    <li id="EJS">
+                        <span class="techs_name">EJS</span> 
+                        <div class="bar_percent_module">
+                            <div class="bar_percent-tech boll_init-tech colorBar4"><span class="percent_legend">0%</span></div>
+                        </div>
+                    </li>
+                    <li id="Sass">
+                        <span class="techs_name">Sass<i class='bx bxl-sass colorIcon5' ></i></span> 
+                        <div class="bar_percent_module">
+                            <div class="bar_percent-tech boll_init-tech colorBar5"><span class="percent_legend">0%</span></div>
+                        </div>
+                    </li>
+                    <div class="barTechs-total">
+                        <div id="HTML-barTechs-total" class="colorBar1"></div><div id="CSS-barTechs-total" class="colorBar2"></div><div id="JavaScript-barTechs-total"  class="colorBar3"></div>
+                        <div id="EJS-barTechs-total" class="colorBar4"></div><div id="Sass-barTechs-total"  class="colorBar5"></div>
+                    </div>
+                </ul>
+            </div>
+        </section>
+
+        <section class="notorious_projects-container">
+            <div class="notorious_projects-content">
+                <h1 class="page_title-h1">PORTFÓLIO</h1>
+                <ul>
+                    <li id="todos" class="filter-button sonic_top-button" >TODOS</li>
+                    <li id="projeto_full-stack" class="filter-button">PROJETOS FULL-STACK</li>
+                    <li id="site_clone" class="filter-button">SITES CLONES</li>
+                    <li id="lading_page" class="filter-button" >LADING PAGES</li>
+                    <li id="e-commerce" class="filter-button">E-COMMERCE'S</li>
+                </ul>
+                <div class="blocks_project-container visible-none">
+
+                </div>
+                <span class="indicator_button-visible">
+                    <button onclick="visibilityProjects(this)">
+                        <p class="visibility_display">Ver mais</p>
+                        <i class='bx bx-down-arrow-alt icon_indication' ></i>
+                    </button>
+                </span>
+            </div>
+        </section>
+
+        <section id="contato" class="contactMe-container">
+            <div class="contactMe-content">
+                <h1 class="page_title-h1">CONTATO</h1>
+                <div class="inputsForms">
+                    <div class="cardsRedes">
+                        <div class="cardRed">
+                            <i class="bx bxs-envelope"></i>
+                            <h3>Email</h3>
+                            <a target="_blank" href="https://mail.google.com/mail/u/augustoc.westphal@gmail.com ">Enviar</a>
+                        </div>
+                        <div class="cardRed">
+                            <i class="bx bxl-whatsapp"></i>
+                            <h3>Whatsapp</h3>
+                            <a target="_blank" href="https://contate.me/port.augusto">Enviar</a>
+                        </div>
+                        <div class="cardRed">
+                            <i class="bx bxl-telegram"></i>
+                            <h3>Telegram</h3>
+                            <a target="_blank" href="https://criarmeulink.com.br/u/1652977405">Enviar</a>
+                        </div>
+                    </div>
+                    <form class="form_content" action="https://formsubmit.co/augustoc.westphal@gmail.com" method="POST">
+                        <p>Nome</p>
+                        <input id="nome" type="text" name = "name" placeholder="Digite seu nome" required>
+                        <p>Email</p>
+                        <input id="email" type="email" name="email" placeholder="Seu e-mail" required>                  
+                        <p>Project</p>
+                        <textarea id="coment" type="text" name="message" placeholder="Escreva sobre o projeto"></textarea>
+                        <input id="submit" type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-contant">
+
+            </div>
+        </footer>
+    </div>
+    <script src="/public/js/_dbTechsInfos.js"></script>
+    <script src="/public/js/telaprincipal.js"></script>
+</body>
+</html>

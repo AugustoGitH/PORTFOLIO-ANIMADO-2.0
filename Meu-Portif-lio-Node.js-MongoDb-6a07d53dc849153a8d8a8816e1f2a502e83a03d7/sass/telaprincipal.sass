@@ -1,0 +1,893 @@
+@use "variables"
+@use "mixins"
+
+
+::-webkit-scrollbar
+    border-radius: 10px
+    width: .6rem
+::-webkit-scrollbar-thumb
+    background-color: rgba(255, 255, 255, 0.663)
+    border-radius: 5px
+::-webkit-scrollbar-thumb:hover
+    background-color: #fff
+
+.block-overflow
+    overflow-y: hidden
+.display-none 
+    display: none
+.opacity-0
+    opacity: 0
+    transition: variables.$transition-default
+.translate-disappear-left
+    transform: translate(-3000px)
+    transition: variables.$transition-default
+.translate-disappear-right
+    transform: translate(3000px)
+    transition: variables.$transition-default
+.translate-disappear-up
+    transform: translateY(-100vh)
+    transition: variables.$transition-default
+.block-scrollBody
+    overflow-y: hidden
+
+.page_title-h1
+    color: variables.$color-yellow
+    display: inline
+    font-size: variables.$title-h1
+    position: relative
+    text-shadow: variables.$box-shadow-01 variables.$color-boxShadow-yellow
+    @media (max-width: 500px)
+        font-size: variables.$title-h1-cell
+    @mixin line-title()
+        background: variables.$color-yellow
+        box-shadow: variables.$box-shadow-01 variables.$color-boxShadow-yellow
+        content: ""
+        height: 3px
+        margin: auto
+        position: absolute
+        width: 40%
+    &::after
+        @include line-title()
+        right: 0
+        top: -6px
+    
+    &::before
+        @include line-title()
+        left: 0
+        bottom: -6px
+        
+body
+    background: variables.$color-body
+    @include mixins.flex-box(end, center)
+    position: relative
+    .popup_loop
+        background: variables.$color-popUp
+        position: fixed
+        top: 0
+        width: 100vw
+        height: 100vh
+        z-index: variables.$z-index-03
+        @include mixins.flex-box(center, center)
+        img
+            width: 100px
+    .body-page
+        display: flex
+        flex-direction: column
+        height: 100%
+        width: calc(100% - 130px)
+        padding-right: 1.3rem
+        @media (max-width: 600px) 
+           width: calc(100% - 60px) 
+        .line_nav-page
+            background: variables.$color-yellow
+            border-radius: 10px
+            height: 100%
+            left: 70px
+            position: absolute
+            top: 280px
+            width: 3px
+            @media (max-width: 600px) 
+                left: 30px
+        .rocket_nav-scroll
+            left: 46px
+            position: absolute
+            top: 200px
+            transform: rotate(180deg)
+            width: 50px
+            z-index: variables.$z-index-02
+            transition: variables.$transition-default
+            @media (max-width: 600px) 
+                left: 12px
+                width: 40px
+        .presentation_profile-container
+            width: 100%
+            @include mixins.flex-box(flex-start, center)
+            @media (max-width: 1300px)
+                height: 100vh
+            padding: 7vw 0
+            .presentation_profile-content
+                @include mixins.flex-box(center, center)
+                @media (max-width: 850px)
+                    flex-direction: column
+                    align-items: flex-start
+                img
+                    border-radius: 50%
+                    @include mixins.box-shadow(variables.$box-shadow-03, variables.$color-boxShadow-yellow)
+                    height: 260px
+                    width: 260px
+                    margin-right: 2rem
+                    @media (max-width: 850px)
+                        margin-bottom: 1rem
+                        width: 260px
+                        height: 260px
+                h2
+                    font-size: variables.$sub-title-h2
+                    @media (max-width: 700px)
+                        font-size: variables.$sub-title-h2-cell
+                h1
+                    font-size: variables.$title-h1
+                    @media (max-width: 700px)
+                        line-height: 2.2rem
+                        font-size: variables.$title-h1-cell
+                    &::after
+                        color: #fff
+                        content: "|"
+                        opacity: 0
+                        @keyframes pisca-line 
+                            0%, 100%
+                                opacity: 0
+                            50%
+                                opacity: 1
+                        animation: pisca-line .7s linear infinite
+
+                p
+                    color: variables.$color-clear-blue
+                    font-size: variables.$sub-title-p
+                    @media (max-width: 700px)
+                        font-size: variables.$sub-title-p-cell
+                button
+                    @include mixins.button-rectangle(variables.$color-yellow, variables.$color-boxShadow-yellow)
+                    margin: 1rem 0        
+                ul
+                    i
+                        margin: 0 .4rem
+                        font-size: variables.$font-icon-02
+                        @include mixins.button-circle(variables.$color-clear-blue, variables.$color-boxShadow-clear-blue)
+                        &:hover
+                            box-shadow: none
+                            transform: variables.$translate-hover-02
+
+        .technologies-container
+            width: 100%
+            padding: 9vw 0
+            @media (max-width: 700px)
+                padding: 12vw 0
+            .technologies-content
+                .buttons_infoTechs-list
+                    display: flex
+                    flex-wrap: wrap
+                    margin-top: 2rem
+                    li
+                        font-size: variables.$font-button-02
+                        @include mixins.flex-box(center, center)
+                        flex-direction: column
+                        margin: .5rem
+                        padding: .4rem
+                        cursor: pointer
+                        font-weight: bold
+                        transition: variables.$transition-default
+                        @mixin button-techs($color, $boxShadow)
+                            border: 2px solid $color
+                            box-shadow: $boxShadow $color
+                            p
+                                color: $color
+                        @media (max-width: 730px)
+                            font-size: variables.$font-button-02-cell
+                        @media (max-width: 500px)
+                            margin: .3rem
+                            padding: .3rem
+                        &:nth-child(1)
+                            @include button-techs(variables.$color-yellow, variables.$box-shadow-02)
+                        &:nth-child(2)
+                            @include button-techs(variables.$color-clear-blue, variables.$box-shadow-02)
+                        &:nth-child(3)
+                            @include button-techs(#55d30c, variables.$box-shadow-02)
+                        &:nth-child(4)
+                            @include button-techs(#f07f23, variables.$box-shadow-02)
+                        &:nth-child(5)
+                            @include button-techs(#6795f1, variables.$box-shadow-02)
+                        &:nth-child(6)
+                            @include button-techs(#e367c4, variables.$box-shadow-02)
+                        &:nth-child(7)
+                            @include button-techs(#ff0000, variables.$box-shadow-02)
+                        &:nth-child(8)
+                            @include button-techs(#524deb, variables.$box-shadow-02)
+                        &:hover
+                            box-shadow: none
+                            transform: variables.$translate-hover-02
+                .scenery_blocks-container
+                    @include mixins.flex-box(flex-start, center)
+                    flex-wrap: nowrap
+                    position: relative
+                    width: 100%
+                    margin-top: 100px
+                    .block_tech
+                        @include mixins.flex-box(center, center)
+                        height: 75px
+                        width: 75px
+                        position: relative
+                        margin-right: 3rem
+                        @media (max-width: 700px)
+                            margin-right: 1rem
+                        @media (max-width: 500px)
+                            width: 50px
+                            height: 50px
+                            margin-right: .1rem
+                        i
+                            color: variables.$color-black
+                            font-size: variables.$font-icon-03
+                            @media (max-width: 500px)
+                                font-size: variables.$font-icon-03-cell
+                        &::before
+                            content: ""
+                            height: 100%
+                            left: -15px
+                            position: absolute
+                            top: 0
+                            transform-origin: right
+                            transform: skewY(45deg)
+                            transition: variables.$transition-default
+                            width: 15px
+                        &::after
+                            content: ""
+                            height: 15px
+                            left: -0px
+                            position: absolute
+                            top: -15px
+                            transform-origin: bottom
+                            transform: skewX(45deg)
+                            transition: variables.$transition-default
+                            width: 100%
+                    @mixin color-block-techs($color, $color-boxShadow01, $color-boxShadow02, $z-index)
+                        background: $color
+                        z-index: $z-index
+                        &::after
+                            background: $color-boxShadow01
+                        &::before
+                            background: $color-boxShadow02
+                    .color_block-01
+                        @include color-block-techs(#ff9b05, #ffd82a, rgb(136, 139, 22), 5)
+                        @keyframes shake-block
+                            0%, 100%
+                                transform: translateY(0px)
+                            50%
+                                transform: translateY(20px)
+                        
+                        animation: shake-block .4s ease-out infinite
+                        .mario_person-img
+                            @keyframes jump-mario
+                                0%, 100%
+                                    transform: translateY(0px)
+                                50%
+                                    transform: translateY(10px)
+                            animation: jump-mario .4s ease-out infinite
+                            position: absolute
+                            right: 23px
+                            top: -66px
+                            transform: rotate(360deg)
+                            width: 40px
+                            z-index: variables.$z-index-01
+                            @media (max-width: 500px)
+                                width: 30px
+                                top: -55px
+                                left: 0
+                    .color_block-02
+                        @include color-block-techs(#5991fa, #a2c2fd, #1361f3, 4)
+                        margin-top: -1rem
+                    .color_block-03
+                        @include color-block-techs(#fced22, #fff56a, #b6ab0d, 3)
+                        .coin_person-img
+                            width: 40px
+                            position: absolute
+                            top: -60px
+                            right: 26px
+                            z-index: variables.$z-index-01
+                            @keyframes flutter-coin 
+                                0%, 100%
+                                    top: -60px
+                                    transform: rotateY(0deg)
+                                50%
+                                    top: -80px
+                                    transform: rotateY(360deg)
+                            animation: flutter-coin  3s linear infinite
+                            @media (max-width: 500px)
+                                width: 30px
+                                left: 0
+                    .color_block-04
+                        @include color-block-techs(#e82323, #f76363, #b02828, 2)
+                    .color_block-05
+                        @include color-block-techs(#02297e, #0446d6, #021847, 1)
+                        margin-top: -2rem
+                .estatics_techs-used
+                    margin-top: 5rem
+                    width: 100%
+                    h1
+                        font-size: variables.$title-h2
+                        margin-bottom: 2.4rem
+                        text-transform: uppercase
+                        @media (max-width: 730px)
+                            font-size: variables.$title-h2-cell
+                    .colorBar1
+                        background-color: #ff9b05
+                        box-shadow: 3px 3px #835106
+                    .colorBar2
+                        background-color: #5991fa
+                        box-shadow: 3px 3px #0a3c99
+                    .colorBar3
+                        background-color: #fced22
+                        box-shadow: 3px 3px #958b05
+                    .colorBar4
+                        background-color: #e82323
+                        box-shadow: 3px 3px #6a0b0b
+                    .colorBar5
+                        background-color: #02297e
+                        box-shadow: 3px 3px #051d51
+                    li
+                        @include mixins.flex-box(flex-start, center)
+                        margin-bottom: 1rem
+                        @media (max-width: 500px)
+                            flex-direction: column
+                            @include mixins.flex-box(flex-start, flex-start)
+                            margin-bottom: 1.2rem
+                        .percent_legend
+                            position: absolute
+                            top: 50%
+                            transform: translateY(-50%) 
+                            right: -2.5rem
+                            font-size: 1.2rem
+                            @media (max-width: 500px)
+                                right: -2rem
+                                font-size: 1rem
+                        .colorIcon1
+                            color: #ff9b05
+                        .colorIcon2
+                            color: #5991fa
+                        .colorIcon3
+                            color: #fced22
+                        .colorIcon4
+                            color: #e82323
+                        .colorIcon5
+                            color: #02297e
+                        .techs_name
+                            width: 150px
+                            font-size: variables.$sub-title-h2
+                            font-weight: bold
+                            @media (max-width: 730px)
+                                font-size: variables.$sub-title-h2-cell
+                            @include mixins.flex-box(flex-start, center)
+                            i
+                                font-size: variables.$font-icon-02
+                                margin-left: .5rem
+                                @media (max-width: 500px)
+                                    display: none
+                        .bar_percent_module
+                            width: calc(100% - 150px)
+                            height: 23px
+                            margin-left: 1rem
+                            @media (max-width: 500px)
+                                width: 100%
+                                margin-left: 0
+                                margin-top: .2rem
+                                
+                            .bar_percent-tech
+                                width: 23px
+                                height: 100%
+                                position: relative
+                                transition: variables.$transition-default
+                            .boll_init-tech
+                                border-radius: 50%
+                    .barTechs-total
+                        margin-top: 3rem
+                        max-width: 70%
+                        min-width: 400px
+                        display: flex
+                        height: 23px
+                        transition: variables.$transition-default
+                        @media (max-width: 500px)
+                            min-width: 100%
+                        div
+                            height: 100%
+                            position: relative
+                            .legend_tech-hover
+                                position: absolute
+                                width: 100px
+                                top: 2rem
+                                transition: variables.$transition-default
+        .notorious_projects-container
+            width: 100%
+            padding: 9vw 0
+            @media (max-width: 700px)
+                padding: 12vw 0
+            .notorious_projects-content
+                ul
+                    @include mixins.flex-box(flex-start, center)
+                    margin-top: 4rem
+                    flex-wrap: wrap
+                    position: relative
+                    @media (max-width: 600px)
+                        margin-top: 3rem
+                    .filter-button
+                        margin: .5rem
+                        font-size: variables.$font-button-01
+                        letter-spacing: 2px
+                        padding: .5rem
+                        transition: variables.$transition-default
+                        font-weight: bold
+                        color: variables.$color-black
+                        text-align: center
+                        cursor: pointer
+                        @media (max-width: 700px)
+                            font-size: variables.$font-button-01-cell
+                        @media (max-width: 600px)
+                            margin: .3rem
+                        &:nth-child(1)
+                            background-color: #ff9b05
+                            box-shadow: variables.$box-shadow-02 #835106
+                        &:nth-child(2)
+                            background-color: #5991fa
+                            box-shadow: variables.$box-shadow-02 #0a3c99
+                        &:nth-child(3)
+                            background-color: #fced22
+                            box-shadow: variables.$box-shadow-02 #958b05
+                        &:nth-child(4)
+                            background-color: #e82323
+                            box-shadow: variables.$box-shadow-02 #6a0b0b
+                        &:nth-child(5)
+                            background-color: #5f7ab3
+                            box-shadow: variables.$box-shadow-02 #344467
+                        &:hover
+                            box-shadow: none
+                            transform: variables.$translate-hover-02
+                        @media (max-width: 730px)
+                            margin: .4rem
+                        
+                    .sonic_top-button
+                        @keyframes shake-button 
+                            10%, 90% 
+                                transform: translate3d(-1px, 0, 0)
+                            20%, 80% 
+                                transform: translate3d(2px, 0, 2px)
+                            30%, 50%, 70% 
+                                transform: translate3d(-4px, 0, 0)
+                            40%, 60% 
+                                transform: translate3d(4px, 0, 0)
+                        animation: shake-button  .2s linear infinite
+                        position: relative
+                        transition: variables.$transition-default
+                        &::after
+                            background-image: url(/public/assets/Persons_Gif/sonic_correndo.gif)
+                            background-position: center
+                            background-size: contain
+                            content: ""
+                            height: 64px
+                            left: 0
+                            margin: auto
+                            position: absolute
+                            right: 0
+                            top: -58px
+                            width: 64px
+                            @media (max-width: 700px)
+                                width: 50px
+                                height: 50px
+                                top: -45px
+                .blocks_project-container
+                    @include mixins.flex-box(flex-start, flex-start)
+                    flex-wrap: wrap
+                    transition: variables.$transition-default
+                    margin-top: 5rem
+                    width: 100%
+                    .block_project
+                        @include mixins.flex-box(center, center)
+                        margin: 1rem
+                        cursor: pointer
+                        width: 400px
+                        position: relative
+                        max-height: 500px
+                        transition: variables.$transition-default
+                        &:hover
+                            transform: scale(0.97)
+
+                        &::before
+                            content: ""
+                            height: 100%
+                            left: -15px
+                            position: absolute
+                            top: 0
+                            transform-origin: right
+                            transform: skewY(45deg)
+                            transition: variables.$transition-default
+                            width: 15px
+                        &::after
+                            content: ""
+                            height: 15px
+                            left: -0px
+                            position: absolute
+                            top: -15px
+                            transform-origin: bottom
+                            transform: skewX(45deg)
+                            transition: variables.$transition-default
+                            width: 100%
+                        img
+                            pointer-events: none
+                            width: 100%
+                            height: auto
+                    @mixin block-border($border01, $border02)
+                        &::after
+                            background-color: $border01
+                        &::before
+                            background-color: $border02   
+                    .block-border-red
+                        @include block-border(rgb(242, 26, 26), rgb(146, 6, 6))
+                    .block-border-blue
+                        @include block-border(rgb(9, 42, 83), rgb(19, 82, 159))
+                    .block-border-white
+                        @include block-border(rgb(176, 182, 189), rgb(229, 237, 245))
+                    .block-border-gray
+                        @include block-border(rgb(138, 141, 143), rgb(201, 202, 204))
+                    .block-border-dark-blue
+                        @include block-border(rgb(6, 46, 73), rgb(9, 48, 127))
+                    .block-border-yellow
+                        @include block-border(rgb(245, 249, 2), rgb(163, 155, 9))
+                    .block-border-light-blue
+                        @include block-border(#81a2e9, #384d78)
+                .rotateArrowUp
+                    transform: rotate(180deg)
+                .visible-none
+                    overflow-y: hidden
+                    height: 60vh
+                .indicator_button-visible
+                    @include mixins.flex-box(center, center)
+                    button
+                        all: unset
+                        margin-top: 1rem
+                        cursor: pointer
+                        @include mixins.flex-box(center, center)
+                        .visibility_display
+                            text-transform: uppercase
+                            font-size: variables.$font-button-02
+                        .icon_indication
+                            width: 40px
+                            height: 40px
+                            border-radius: 50%
+                            @include mixins.flex-box(center, center)
+                            background-color: variables.$color-yellow
+                            margin-left: 1rem
+                            color: variables.$color-black
+                            font-size: variables.$font-icon-02
+
+        .contactMe-container
+            width: 100%
+            padding: 9vw 0
+            @media (max-width: 700px)
+                padding: 12vw 0 
+            .contactMe-content
+                .inputsForms
+                    .cardsRedes
+                        margin-top: 2rem
+                        display: grid
+                        grid-template-columns: repeat(auto-fit, minmax(100px, 180px))
+                        justify-content: start
+                        gap: 40px
+                        @media (max-width: 425px)
+                            grid-template-columns: repeat(auto-fit, minmax(150px, 200px))
+                        .cardRed
+                            @include mixins.flex-box(center, center)
+                            flex-direction: column
+                            padding: 1rem
+                            border-radius: 10px
+                            cursor: default
+                            background: rgb(25, 17, 69)
+                            box-shadow: variables.$box-shadow-02 rgb(33, 21, 98)
+                            a
+                                font-size: variables.$font-button-01
+                                background: #fff
+                                color: variables.$color-black
+                                margin-top: 1rem
+                                padding: .3rem 1.2rem
+                                border-radius: 10px
+                                letter-spacing: 2px
+                                box-shadow: variables.$box-shadow-01 rgb(162, 153, 153)
+                                transition: variables.$transition-default
+                                @media (max-width: 425px)
+                                    font-size: variables.$font-button-01-cell
+                                &:hover
+                                    box-shadow: none
+                                    transform: variables.$translate-hover-01
+                            i
+                                font-size: variables.$font-icon-03
+                                @media (max-width: 425px)
+                                    font-size: variables.$font-icon-03-cell
+                            h3
+                                font-size: 1.3rem
+                                @media (max-width: 425px)
+                                    font-size: 1.1rem
+                            .bxs-envelope
+                                color: red
+                                filter: drop-shadow(3px 3px rgb(155, 22, 22))
+                            .bxl-whatsapp
+                                color: rgb(14, 244, 14)
+                                filter: drop-shadow(2px 2px rgb(4, 154, 4))
+                            .bxl-telegram
+                                color: blue
+                                filter: drop-shadow(3px 3px rgb(10, 10, 134))
+                    .form_content
+                        width: 100%
+                        p
+                            margin-top: 2rem
+                            font-size: 1.4rem
+                            @media (max-width: 425px)
+                                    font-size: 1.2rem
+                        input, textarea
+                            border-radius: 10px
+                            border: none
+                            box-shadow: variables.$box-shadow-02 rgb(123, 117, 117)
+                            color: variables.$color-black
+                            font-size: variables.$font-button-01
+                            padding: 1rem
+                            transition: variables.$transition-default
+                            width: 700px
+                            @media (max-width: 940px)
+                                width: 100%
+                            @media (max-width: 800px)
+                                font-size: variables.$font-button-01-cell
+                            @media (max-width: 425px)
+                                    width: 90%
+                                    font-size: variables.$font-button-01-cell
+                            &:focus
+                                box-shadow: none
+                                outline: none
+                                transform: variables.$translate-hover-02
+                        textarea
+                            display: block
+                            height: 200px
+                            resize: none
+                        input[type="submit"]
+                            margin-top: 2rem
+                            width: 200px
+                            padding: .6rem 0
+                            font-size: variables.$font-button-01
+                            text-transform: uppercase
+                            cursor: pointer
+                            background-color: variables.$color-clear-blue
+                            box-shadow: variables.$box-shadow-02 variables.$color-boxShadow-clear-blue
+                            transition: variables.$transition-default
+                            @media (max-width: 425px)
+                                width: 150px
+                            &:hover
+                                box-shadow: none
+                                transform: variables.$translate-hover-02
+                            
+
+.pop_project
+    position: fixed
+    right: 0
+    top: 50vh
+    background-color: #fff
+    max-width: calc(100vw - 100px)
+    border-bottom-left-radius: 70px
+    border-top-left-radius: 70px
+    box-shadow: variables.$box-shadow-02 rgb(197, 171, 171)
+    z-index: variables.$z-index-03
+    transition: variables.$transition-default
+    @media (max-width: 490px)
+        max-width: 100vh
+        margin-left: 2rem
+    .pop_proj-content
+        margin: 1rem 2rem 1rem 4rem
+        position: relative
+        @include mixins.flex-box(center, center)
+        span
+            color: variables.$color-black
+            font-size: 1.1rem
+            text-transform: uppercase
+            font-weight: bold
+            background-color: variables.$color-yellow
+            padding: 2px 1.3rem
+        h1
+            color: variables.$color-black
+            font-size: variables.$title-h2
+            margin-top: 0.3rem
+            margin-bottom: 0.7rem
+            margin-right: 4rem
+            text-transform: uppercase
+            @media (max-width: 700px)
+                font-size: 1.5rem
+                margin-right: 1rem
+            @media (max-width: 490px)
+                font-size: 1.4rem
+                line-height: 1.4rem
+        i
+            color: variables.$color-black
+            font-size: variables.$font-icon-02
+        img
+            width: 120px
+            @media (max-width: 700px)
+                width: 110px
+            @media (max-width: 490px)
+                width: 90px
+        article
+            margin-left: .3rem
+            nav
+                @include mixins.flex-box(flex-start, center)
+                flex-wrap: wrap
+                .hiperlink-access
+                    letter-spacing: 1px
+                    text-transform: uppercase
+                    padding: .2rem 1.4rem
+                    background-color: variables.$color-yellow
+                    border-radius: 20px
+                    box-shadow: variables.$box-shadow-02 variables.$color-boxShadow-yellow
+                .accessLinkButton
+                    background-color: variables.$color-clear-blue
+                    width: 40px
+                    height: 40px
+                    @include mixins.flex-box(center, center)
+                    border-radius: 50%
+                    box-shadow: variables.$box-shadow-02 variables.$color-boxShadow-clear-blue
+                    @media (max-width: 490px)
+                        width: 30px
+                        height: 30px
+                    i
+                        font-size: variables.$font-button-03
+                        @media (max-width: 490px)
+                            font-size: variables.$font-button-02-cell
+                .accessLinkButton,  .hiperlink-access
+                    font-size: variables.$font-button-02
+                    color: variables.$color-black
+                    cursor: pointer
+                    transition: variables.$transition-default
+                    margin: .2rem
+                    @media (max-width: 700px)
+                        font-size: variables.$font-button-02-cell
+                    @media (max-width: 490px)
+                        font-size: .9rem
+                    &:hover
+                        box-shadow: none
+                        transform: variables.$translate-hover-02
+            ul
+                margin-top: 1rem
+                i
+                    font-size: variables.$font-icon-03
+                    @media (max-width: 490px)
+                        font-size: 1.7rem
+
+        .fecha_pop
+            background-color: variables.$color-yellow
+            position: absolute
+            left: -150px
+            width: 60px
+            height: 60px
+            border-radius: 50%
+            cursor: pointer
+            border: none
+            box-shadow: variables.$box-shadow-02 variables.$color-boxShadow-yellow
+            @media (max-width: 700px)
+                width: 50px
+                height: 50px
+            @media (max-width: 490px)
+                left: -80px
+            i
+                color: variables.$color-black
+                font-size: variables.$font-icon-02
+                transition: variables.$transition-default
+                @media (max-width: 700px)
+                    font-size: variables.$font-icon-02-cell
+            &:hover i
+                transform: translate(10px)
+            
+
+
+.video_port
+    width: 100vw
+    height: 100vh
+    position: fixed
+    top: 0
+    background-color: variables.$color-popUp
+    backdrop-filter: blur(20px)
+    z-index: variables.$z-index-03
+    @include mixins.flex-box(center, center)
+    flex-direction: column
+    @media (max-width: 500px)
+        align-items: flex-start
+    #iframe
+        width: 70%
+        height: 80%
+        box-shadow: variables.$box-shadow-02 rgb(77, 77, 56)
+        border-radius: 30px
+        @media (max-width: 800px)
+            width: 100%
+        @media (max-width: 500px)
+            width: 100%
+            height: 300px
+            margin-top: 3rem
+    .buttonSairIf
+        font-size: 1.5rem
+        background-color: variables.$color-yellow
+        color: variables.$color-black
+        text-transform: uppercase
+        padding: 8px 40px
+        border-radius: 30px
+        font-weight: bold
+        cursor: pointer
+        box-shadow: variables.$box-shadow-02 variables.$color-boxShadow-yellow
+        margin-bottom: 1rem
+        transition: variables.$transition-default
+        @media (max-width: 500px)
+            font-size: 1.2rem
+        &:hover
+            box-shadow: none
+            transform: variables.$translate-hover-02
+
+.popUp_infoTech
+    position: fixed
+    top: 0
+    width: 100vw
+    height: 100vh
+    background-color: variables.$color-popUp
+    z-index: variables.$z-index-03
+    @include mixins.flex-box(flex-start, flex-start)
+    flex-direction: column
+    transition: variables.$transition-default
+    padding: 10% 5%
+    h2
+        font-size: variables.$title-h2
+        color: variables.$color-yellow
+        margin-bottom: 1.4rem
+        @media (max-width: 500px)
+            font-size: variables.$title-h2-cell
+    p
+        font-size: variables.$sub-title-p
+        @media (max-width: 500px)
+            font-size: variables.$sub-title-p-cell
+    article
+        margin-top: 1.3rem
+        button
+            background: variables.$color-yellow
+            border: 1.5px solid variables.$color-yellow
+            color: variables.$color-black
+            font-size: variables.$font-button-01
+            text-transform: uppercase
+            padding: .2rem 1rem
+            cursor: pointer
+            transition: variables.$transition-default
+            border-radius: 20px
+            &:hover
+                background: transparent
+                color: variables.$color-yellow
+        a
+            font-size: variables.$font-button-01
+            margin-left: 3rem
+            position: relative
+            padding: .2rem 1rem
+            cursor: pointer
+            text-transform: uppercase
+            color: #fff
+            transition: variables.$transition-default
+            &::before
+                content: ""
+                position: absolute
+                background: variables.$color-blue
+                z-index: -1
+                left: 0
+                top: 0
+                height: 100%
+                width: 2px
+                transition: variables.$transition-default
+            &:hover::before
+                width: 100%
+
+
+            
+
+  
+                
